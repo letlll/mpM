@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: letlc
+Build-Jdk: Oracle OpenJDK 1.8.0_431
+Implementation-Title: springboot-schema
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.jlwl
+Main-Class: ${start-class}
+
