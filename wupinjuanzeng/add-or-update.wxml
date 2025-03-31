@@ -1,0 +1,45 @@
+<view class="container">
+  <form class="form">
+    <view class="cu-form-group">
+      <view class="title">物品名称</view>
+      <input placeholder="请输入物品名称" model:value="{{ruleForm.wupinmingcheng}}"></input>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">物品类型</view>
+      <picker bindchange="wupinleixingChange" value="{{wupinleixingIndex}}" range="{{wupinleixingOptions}}">
+        <view class="picker">
+          {{ruleForm.wupinleixing || '请选择物品类型'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">物品数量</view>
+      <input type="number" placeholder="请输入物品数量" value="{{ruleForm.shuliang}}" bindinput="shuliangInput"></input>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">捐赠时间</view>
+      <picker mode="date" value="{{ruleForm.juanzengshijian}}" start="2020-01-01" end="2030-12-31" bindchange="timeChange">
+        <view class="picker">
+          {{ruleForm.juanzengshijian || '请选择捐赠时间'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">物品图片</view>
+      <view class="upload-img" bindtap="tupianChoose">
+        <image src="{{ruleForm.tupian}}" mode="aspectFill" wx:if="{{ruleForm.tupian}}"></image>
+        <view class="upload-btn" wx:else>
+          <text class="cuIcon-cameraadd"></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="btn-submit">
+      <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap="onSubmit">提交</button>
+    </view>
+  </form>
+</view>

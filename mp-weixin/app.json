@@ -1,15 +1,124 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/login/login",
+    "pages/register/register",
+    "pages/forget/forget",
+    "pages/center/center",
+    "pages/user-info/user-info",
+    "pages/news-detail/news-detail",
+    "pages/zhiyuanzhe/list",
+    "pages/zhiyuanzhe/add-or-update",
+    "pages/zhiyuanzhe/detail",
+    "pages/juanzengzhe/list",
+    "pages/juanzengzhe/add-or-update",
+    "pages/juanzengzhe/detail",
+    "pages/shouzhuzhe/list",
+    "pages/shouzhuzhe/add-or-update",
+    "pages/shouzhuzhe/detail",
+    "pages/shouzhushenqing/list",
+    "pages/shouzhushenqing/add-or-update",
+    "pages/shouzhushenqing/detail",
+    "pages/juanzengxiangmu/list",
+    "pages/juanzengxiangmu/add-or-update",
+    "pages/juanzengxiangmu/detail",
+    "pages/juanzengjilu/list",
+    "pages/juanzengjilu/add-or-update",
+    "pages/juanzengjilu/detail",
+    "pages/gongyihuodong/list",
+    "pages/gongyihuodong/add-or-update",
+    "pages/gongyihuodong/detail",
+    "pages/huodongbaoming/list",
+    "pages/huodongbaoming/add-or-update",
+    "pages/huodongbaoming/detail",
+    "pages/juanzengquxiang/list",
+    "pages/juanzengquxiang/add-or-update",
+    "pages/juanzengquxiang/detail",
+    "pages/xiangmufenlei/list",
+    "pages/xiangmufenlei/add-or-update",
+    "pages/xiangmufenlei/detail",
+    "pages/huodongleixing/list",
+    "pages/huodongleixing/add-or-update",
+    "pages/huodongleixing/detail",
+    "pages/newstype/list",
+    "pages/newstype/add-or-update",
+    "pages/newstype/detail",
+    "pages/news/list",
+    "pages/news/add-or-update",
+    "pages/storeup/list",
+    "pages/storeup/add-or-update",
+    "pages/storeup/detail",
+    "pages/aboutus/list",
+    "pages/aboutus/add-or-update",
+    "pages/aboutus/detail",
+    "pages/discussjuanzengxiangmu/list",
+    "pages/discussjuanzengxiangmu/add-or-update",
+    "pages/discussjuanzengxiangmu/detail",
+    "pages/wupinjuanzeng/list",
+    "pages/wupinjuanzeng/add-or-update",
+    "pages/wupinjuanzeng/detail",
+    "common/linkOthers/linkOthers"
   ],
+  "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarBackgroundColor": "#ffffff"
+    "navigationBarTitleText": "基于微信小程序的爱心捐赠及追踪平台的设计与实现",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
   },
-  "style": "v2",
-  "componentFramework": "glass-easel",
-  "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "tabBar": {
+    "color": "#CBCBCB",
+    "selectedColor": "#5051B5",
+    "borderStyle": "white",
+    "backgroundColor": "#E2E2E2",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabs/index.png",
+        "selectedIconPath": "static/tabs/index1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/juanzengxiangmu/list",
+        "iconPath": "/static/tabs/icon1.png",
+        "selectedIconPath": "/static/tabs/icon1_act.png",
+        "text": "捐赠项目"
+      },
+      {
+        "pagePath": "pages/gongyihuodong/list",
+        "iconPath": "/static/tabs/icon2.png",
+        "selectedIconPath": "/static/tabs/icon2_act.png",
+        "text": "公益活动"
+      },
+      {
+        "pagePath": "pages/juanzengquxiang/list",
+        "iconPath": "/static/tabs/icon3.png",
+        "selectedIconPath": "/static/tabs/icon3_act.png",
+        "text": "捐赠去向"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "iconPath": "static/tabs/mine.png",
+        "selectedIconPath": "static/tabs/mine1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取地址"
+    }
+  },
+  "requiredPrivateInfos": [
+    "chooseLocation",
+    "getLocation"
+  ],
+  "usingComponents": {
+    "uni-load-more": "/components/mescroll-uni/mescroll-uni",
+    "mescroll-uni": "/components/mescroll-uni/mescroll-uni",
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "z-swiper-item": "/components/zebra-swiper/components/z-swiper-item/z-swiper-item",
+    "z-swiper": "/components/zebra-swiper/components/z-swiper/z-swiper",
+    "music-play": "/components/musicPlay/musicPlay"
+  }
 }

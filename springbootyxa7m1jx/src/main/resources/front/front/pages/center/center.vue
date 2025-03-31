@@ -69,6 +69,11 @@
 								</block>
 							</block>
 						</block>
+						<view v-if="tableName=='juanzengzhe'" @tap="onPageTap('../wupinjuanzeng/list')" class="me-menu-item" hover-class="hover">
+							<view class="cuIcon-goods me-menu-icon"></view>
+							<view class="text">物品捐赠</view>
+							<view class="icon iconfont icon-jinru"></view>
+						</view>
 						<view v-if="user&&user.id" @tap="passwordShow()" class="me-menu-item" hover-class="hover">
 							<view class="cuIcon-lock me-menu-icon"></view>
 							<view class="text">修改密码</view>
@@ -119,6 +124,7 @@
 				tableName:'',
 				role: '',
 				menuList: [],
+				meMenuColor: [],
 				iconArr: [
 					'cuIcon-same',
 					'cuIcon-deliver',

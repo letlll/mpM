@@ -1,28 +1,24 @@
 {
-  "compileType": "miniprogram",
-  "libVersion": "trial",
+  "description": "项目配置文件。",
   "packOptions": {
     "ignore": [],
     "include": []
   },
   "setting": {
-    "coverView": true,
-    "es6": true,
-    "postcss": true,
-    "minified": true,
-    "enhance": true,
-    "showShadowRootInWxmlPanel": true,
-    "packNpmRelationList": [],
+    "urlCheck": false,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     }
   },
+  "compileType": "miniprogram",
+  "libVersion": "latest",
+  "appid": "wx4733c78c444d8751",
+  "projectname": "app02",
   "condition": {},
   "editorSetting": {
-    "tabIndent": "auto",
+    "tabIndent": "insertSpaces",
     "tabSize": 2
-  },
-  "appid": "wx4733c78c444d8751"
+  }
 }

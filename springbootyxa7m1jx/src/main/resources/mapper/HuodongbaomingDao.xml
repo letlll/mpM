@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.dao.HuodongbaomingDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+	<!-- 鍙牴鎹嚜宸辩殑闇€姹傦紝鏄惁瑕佷娇鐢?-->
     <resultMap type="com.entity.HuodongbaomingEntity" id="huodongbaomingMap">
         <result property="huodongbiaoti" column="huodongbiaoti"/>
         <result property="huodongleixing" column="huodongleixing"/>
@@ -13,7 +13,7 @@
         <result property="jubanfang" column="jubanfang"/>
         <result property="zhiyuanzhanghao" column="zhiyuanzhanghao"/>
         <result property="zhiyuanzhe" column="zhiyuanzhe"/>
-        <result property="zhiyuanzheshouji" column="zhiyuanzheshouji"/>
+        <result property="zhiyuanzheshouji" column="zhiyuanzheshouji"/><result property="qiandaozhuangtai" column="qiandaozhuangtai"/>
     </resultMap>
 
 	<select id="selectListVO"

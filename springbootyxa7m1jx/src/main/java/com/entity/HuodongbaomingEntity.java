@@ -104,8 +104,22 @@ public class HuodongbaomingEntity<T> implements Serializable {
 	 */
 					
 	private String zhiyuanzheshouji;
-	
-	
+
+	/**
+	 * 签到状态
+	 */
+	private String qiandaozhuangtai;
+
+	/**
+	 * 结束时间
+	 */
+	private String jieshushijian;
+
+	/**
+	 * 工时记录
+	 */
+	private Integer gongshijilu;
+
 	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
 	@DateTimeFormat
 	private Date addtime;
@@ -233,4 +247,45 @@ public class HuodongbaomingEntity<T> implements Serializable {
 		return zhiyuanzheshouji;
 	}
 
+	/**
+	 * 设置：签到状态
+	 */
+	public void setQiandaozhuangtai(String qiandaozhuangtai) {
+		this.qiandaozhuangtai = qiandaozhuangtai;
+	}
+
+	/**
+	 * 获取：签到状态
+	 */
+	public String getQiandaozhuangtai() {
+		return qiandaozhuangtai;
+	}
+
+	/**
+	 * 设置：结束时间
+	 */
+	public void setJieshushijian(String jieshushijian) {
+		this.jieshushijian = jieshushijian;
+	}
+
+	/**
+	 * 获取：结束时间
+	 */
+	public String getJieshushijian() {
+		return jieshushijian;
+	}
+
+	/**
+	 * 设置：工时记录
+	 */
+	public void setGongshijilu(Integer gongshijilu) {
+		this.gongshijilu = gongshijilu;
+	}
+
+	/**
+	 * 获取：工时记录
+	 */
+	public Integer getGongshijilu() {
+		return gongshijilu;
+	}
 }

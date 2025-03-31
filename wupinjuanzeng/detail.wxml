@@ -1,0 +1,42 @@
+<view class="content">
+  <view class="container">
+    <view class="detail-card">
+      <view class="detail-header">
+        <view class="detail-title">{{detail.wupinmingcheng}}</view>
+        <view class="detail-status {{getStatusClass(detail.zhuangtai)}}">{{detail.zhuangtai}}</view>
+      </view>
+      
+      <view class="detail-image" wx:if="{{detail.tupian}}">
+        <image src="{{baseUrl + detail.tupian}}" mode="aspectFill"></image>
+      </view>
+      
+      <view class="detail-info">
+        <view class="info-item">
+          <view class="info-label">物品类型</view>
+          <view class="info-value">{{detail.wupinleixing}}</view>
+        </view>
+        <view class="info-item">
+          <view class="info-label">捐赠数量</view>
+          <view class="info-value">{{detail.shuliang}}</view>
+        </view>
+        <view class="info-item">
+          <view class="info-label">捐赠账号</view>
+          <view class="info-value">{{detail.juanzengzhanghao}}</view>
+        </view>
+        <view class="info-item">
+          <view class="info-label">捐赠姓名</view>
+          <view class="info-value">{{detail.juanzengxingming}}</view>
+        </view>
+        <view class="info-item">
+          <view class="info-label">捐赠时间</view>
+          <view class="info-value">{{detail.juanzengshijian}}</view>
+        </view>
+      </view>
+      
+      <view class="btn-group">
+        <button class="btn-primary" wx:if="{{detail.zhuangtai === '待审核'}}" bindtap="onEditTap">编辑</button>
+        <button class="btn-danger" wx:if="{{detail.zhuangtai === '待审核'}}" bindtap="onDeleteTap">取消捐赠</button>
+      </view>
+    </view>
+  </view>
+</view> 

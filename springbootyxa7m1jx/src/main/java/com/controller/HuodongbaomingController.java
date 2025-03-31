@@ -180,8 +180,40 @@ public class HuodongbaomingController {
     @Transactional
     public R update(@RequestBody HuodongbaomingEntity huodongbaoming, HttpServletRequest request){
         //ValidatorUtils.validateEntity(huodongbaoming);
-        //全部更新
-        huodongbaomingService.updateById(huodongbaoming);
+        HuodongbaomingEntity oldEntity = huodongbaomingService.selectById(huodongbaoming.getId());
+        if (oldEntity == null) {
+            return R.error("活动报名记录不存在");
+        }
+        
+        // 如果是签到操作
+        if (huodongbaoming.getQiandaozhuangtai() != null) {
+            oldEntity.setQiandaozhuangtai(huodongbaoming.getQiandaozhuangtai());
+            // 计算工时
+            if ("已签到".equals(huodongbaoming.getQiandaozhuangtai()) && 
+                oldEntity.getKaishishijian() != null && oldEntity.getJieshushijian() != null) {
+                try {
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    Date startTime = sdf.parse(oldEntity.getKaishishijian());
+                    Date endTime = sdf.parse(oldEntity.getJieshushijian());
+                    long diff = endTime.getTime() - startTime.getTime();
+                    int hours = (int) (diff / (1000 * 60 * 60));
+                    oldEntity.setGongshijilu(hours);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        } else {
+            // 其他字段更新
+            oldEntity.setHuodongbiaoti(huodongbaoming.getHuodongbiaoti());
+            oldEntity.setHuodongleixing(huodongbaoming.getHuodongleixing());
+            oldEntity.setFengmian(huodongbaoming.getFengmian());
+            oldEntity.setKaishishijian(huodongbaoming.getKaishishijian());
+            oldEntity.setJieshushijian(huodongbaoming.getJieshushijian());
+            oldEntity.setHuodongdizhi(huodongbaoming.getHuodongdizhi());
+            oldEntity.setJubanfang(huodongbaoming.getJubanfang());
+        }
+        
+        huodongbaomingService.updateById(oldEntity);
         return R.ok();
     }
 

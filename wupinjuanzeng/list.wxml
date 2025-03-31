@@ -1,0 +1,40 @@
+<view class="content">
+  <view class="container">
+    <view class="list">
+      <block wx:if="{{list.length>0}}">
+        <view class="list-item" wx:for="{{list}}" wx:key="index" bindtap="onDetailTap" data-id="{{item.id}}">
+          <view class="list-item-header">
+            <view class="list-item-title">{{item.wupinmingcheng}}</view>
+            <view class="list-item-status {{getStatusClass(item.zhuangtai)}}">{{item.zhuangtai}}</view>
+          </view>
+          <view class="list-item-content">
+            <image class="list-item-image" src="{{baseUrl + item.tupian}}" wx:if="{{item.tupian}}" mode="aspectFill"></image>
+            <view class="list-item-info">
+              <view class="list-item-info-item">
+                <text class="label">物品类型：</text>
+                <text>{{item.wupinleixing}}</text>
+              </view>
+              <view class="list-item-info-item">
+                <text class="label">捐赠数量：</text>
+                <text>{{item.shuliang}}</text>
+              </view>
+              <view class="list-item-info-item">
+                <text class="label">捐赠时间：</text>
+                <text>{{item.juanzengshijian}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view wx:if="{{list.length==0}}" class="empty">
+        <image src="../../static/empty.png" mode="widthFix"></image>
+        <view class="empty-text">暂无物品捐赠记录</view>
+      </view>
+    </view>
+    
+    <view class="add-btn" bindtap="onAddTap">
+      <text class="cuIcon-add"></text>
+      <text>新增捐赠</text>
+    </view>
+  </view>
+</view> 
